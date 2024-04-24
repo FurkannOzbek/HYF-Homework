@@ -7,9 +7,9 @@ const shouldShowResultInDogYears = true;
 const dogYear = dogYearFuture - dogYearOfBirth;
 // Under this line we are checking if we should show years in dog years or human years and for each statement we have different console logs
 
-if (shouldShowResultInDogYears === true) {
+if (shouldShowResultInDogYears) {
   console.log(
-    "Your dog will be " + dogYear * 7+ " dog years old in " + dogYearFuture
+    "Your dog will be " + dogYear * 7 + " dog years old in " + dogYearFuture
   );
 } else {
   console.log(
