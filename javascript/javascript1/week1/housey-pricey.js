@@ -1,26 +1,31 @@
 // Variables we defined for the task
-const Phouse_depth = 10;
-const Phouse_height = 10;
-const Phouse_width = 8;
-const Pgarden_size = 100;
+const pHouseDepth = 10;
+const pHouseHeight = 10;
+const pHouseWidth = 8;
+const pGardenSize = 100;
 
-const Jhouse_depth = 11;
-const Jhouse_width = 5;
-const Jhouse_height = 8;
-const Jgarden_size = 70;
+const jHouseDepth = 11;
+const jHouseWidth = 5;
+const jHouseHeight = 8;
+const jGardenSize = 70;
+
+// Multipliers given by task for calculating the price
+const houseSizeMultiplier1 = 2.5;
+const houseSizeMultiplier2 = 1000;
+const gardenSizeMultiplier = 300;
 
 // Volume calculator
 
-const volumeInMetersPeter = Phouse_height * Phouse_depth * Phouse_width;
-const volumeInMetersJulia = Jhouse_height * Jhouse_depth * Jhouse_width;
+const volumeInMetersPeter = pHouseHeight * pHouseDepth* pHouseWidth;
+const volumeInMetersJulia = jHouseHeight * jHouseDepth * jHouseWidth;
 
-// House real price calculator for Peter
+// House real price calculator for Peter & cost of house
 
-PhousePrice = volumeInMetersPeter * 2.5 * 1000 + Pgarden_size * 300;
-
+const pHousePrice = volumeInMetersPeter * houseSizeMultiplier1* houseSizeMultiplier2 + pGardenSize * gardenSizeMultiplier;
+const pHouseCost = 2500000;
 // Comparing real price and house cost for giving advice to Peter
 
-if (PhousePrice < 2500000) {
+if (pHousePrice < pHouseCost) {
   console.log("Peter dont buy the house its scam");
 } else {
   console.log("Peter it is safe to buy");
@@ -28,11 +33,11 @@ if (PhousePrice < 2500000) {
 
 // House real price calculator for Julia
 
-JhousePrice = volumeInMetersJulia * 2.5 * 1000 + Jgarden_size * 300;
-
+const jHousePrice = volumeInMetersJulia * houseSizeMultiplier1 * houseSizeMultiplier2 + jGardenSize * gardenSizeMultiplier;
+const jHouseCost = 1000000
 // Comparing real price and house cost for giving advice to Julia
 
-if (JhousePrice < 1000000) {
+if (jHousePrice < jHouseCost) {
   console.log("Julia dont buy the house its scam");
 } else {
   console.log("Julia it is safe to buy");
