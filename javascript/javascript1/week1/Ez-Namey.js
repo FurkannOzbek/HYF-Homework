@@ -35,7 +35,7 @@ const rn2 = Math.floor(Math.random() * secondWords.length);
 const startupName = firstWords[rn1] + " " + secondWords[rn2];
 const letterNumber = startupName.length;
 
-// Showing startup name in the console
+// Showing startup name and number of characters in the console
 console.log(
-  `The startup: "${startupName}" contains ${letterNumber} characters`
+  `The startup: "${startupName}" contains ${letterNumber} characters with space`
 );
