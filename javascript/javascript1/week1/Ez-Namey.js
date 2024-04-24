@@ -26,10 +26,10 @@ const secondWords = [
 ];
 
 // Select random number for first index
-const rn1 = Math.floor(Math.random() * 10);
+const rn1 = Math.floor(Math.random() * firstWords.length);
 
 // Select random number for second index
-const rn2 = Math.floor(Math.random() * 10);
+const rn2 = Math.floor(Math.random() * secondWords.length);
 
 // Setting startup name by selected indexes
 const startupName = firstWords[rn1] + " " + secondWords[rn2];
