@@ -33,6 +33,9 @@ const rn2 = Math.floor(Math.random() * secondWords.length);
 
 // Setting startup name by selected indexes
 const startupName = firstWords[rn1] + " " + secondWords[rn2];
+const letterNumber = startupName.length;
 
 // Showing startup name in the console
-console.log(startupName);
+console.log(
+  `The startup: "${startupName}" contains ${letterNumber} characters`
+);
