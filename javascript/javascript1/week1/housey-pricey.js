@@ -16,12 +16,14 @@ const gardenSizeMultiplier = 300;
 
 // Volume calculator
 
-const volumeInMetersPeter = pHouseHeight * pHouseDepth* pHouseWidth;
+const volumeInMetersPeter = pHouseHeight * pHouseDepth * pHouseWidth;
 const volumeInMetersJulia = jHouseHeight * jHouseDepth * jHouseWidth;
 
 // House real price calculator for Peter & cost of house
 
-const pHousePrice = volumeInMetersPeter * houseSizeMultiplier1* houseSizeMultiplier2 + pGardenSize * gardenSizeMultiplier;
+const pHousePrice =
+  volumeInMetersPeter * houseSizeMultiplier1 * houseSizeMultiplier2 +
+  pGardenSize * gardenSizeMultiplier;
 const pHouseCost = 2500000;
 // Comparing real price and house cost for giving advice to Peter
 
@@ -33,8 +35,10 @@ if (pHousePrice < pHouseCost) {
 
 // House real price calculator for Julia
 
-const jHousePrice = volumeInMetersJulia * houseSizeMultiplier1 * houseSizeMultiplier2 + jGardenSize * gardenSizeMultiplier;
-const jHouseCost = 1000000
+const jHousePrice =
+  volumeInMetersJulia * houseSizeMultiplier1 * houseSizeMultiplier2 +
+  jGardenSize * gardenSizeMultiplier;
+const jHouseCost = 1000000;
 // Comparing real price and house cost for giving advice to Julia
 
 if (jHousePrice < jHouseCost) {
