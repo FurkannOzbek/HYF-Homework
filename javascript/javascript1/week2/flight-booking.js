@@ -14,7 +14,7 @@ function getFullName(firstName, surname, useFormalName, isMale) {
     // Second statement is checking if useFormalName parameter is true or false for giving the lord title
     if (useFormalName) {
       // Third statement is checking whether man or woman
-      if (isMale) {
+      if (!isMale) {
         return `Lord ${firstName} ${surname}`;
       } else {
         return `Lady ${firstName} ${surname}`;
