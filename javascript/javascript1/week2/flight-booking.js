@@ -4,23 +4,25 @@
 
 // Created a function which generate a full name from firstName, surname and useFor
 function getFullName(firstName, surname, useFormalName, isMale) {
+  const fullName = `${firstName} ${surname}`;
+
   // First statement is checking whether given parameters are strings or not and being sure they are not empty
   if (
-    typeof firstName && //check parameter type
+    typeof firstName === "string" && //check parameter type
     typeof surname === "string" && //checks parameter type
-    surname.trim().length !== 0 && //removing all the spaces to check if its empty string or not
-    firstName.trim().length !== 0 //removing all the spaces to check if its empty string or not
+    surname.trim().length && //removing all the spaces to check if its empty string or not
+    firstName.trim().length //removing all the spaces to check if its empty string or not
   ) {
     // Second statement is checking if useFormalName parameter is true or false for giving the lord title
     if (useFormalName) {
       // Third statement is checking whether man or woman
-      if (!isMale) {
-        return `Lord ${firstName} ${surname}`;
+      if (isMale) {
+        return `Lord ${fullName}`;
       } else {
-        return `Lady ${firstName} ${surname}`;
+        return `Lady ${fullName}`;
       }
     } else {
-      return `${firstName} ${surname}`;
+      return fullName;
     }
   }
   // If type of firstName and surname parameters are not string or empty strings then returning the error message
