@@ -4,8 +4,8 @@
 //Data
 
 const travelInformation = {
-  speed: 120,
-  destinationDistance: 879,
+  speed: 50,
+  destinationDistance: 432,
 };
 //Logic
 function timeCalculator(travelInfo) {
