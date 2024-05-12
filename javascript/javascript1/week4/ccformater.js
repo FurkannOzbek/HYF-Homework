@@ -5,21 +5,25 @@
 let k = 0;
 
 function formatCreditCardNumber(number) {
-  const numbersIntoArray = String(number).split("");
-  let str = "";
-  for (i = 0; i < numbersIntoArray.length; i++) {
-    console.log(i);
-    if (i % 4 === 0 && i !== 0) {
-      //   numbersIntoArray.splice(numbersIntoArray[i + k], 0, " ");
-      str += " " + numbersIntoArray[i];
-      // k = k + 1;
-    } else {
-      str += numbersIntoArray[i];
+  if (typeof number !== "number") {
+    console.log("Please type numbers");
+  } else {
+    const numbersIntoArray = String(number).split("");
+    let str = "";
+    for (i = 0; i < numbersIntoArray.length; i++) {
+      console.log(i);
+      if (i % 4 === 0 && i !== 0) {
+        //   numbersIntoArray.splice(numbersIntoArray[i + k], 0, " ");
+        str += " " + numbersIntoArray[i];
+        // k = k + 1;
+      } else {
+        str += numbersIntoArray[i];
+      }
     }
+    return str;
   }
   //numbersIntoArray = numbersIntoArray.join("");
   //   return numbersIntoArray;
-  return str;
 }
 
 const formattedCreditCardObject = formatCreditCardNumber(123456789412423);
