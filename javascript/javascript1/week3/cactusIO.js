@@ -4,10 +4,10 @@ const activities = [];
 let timeOfActivities = 0;
 let mostUse = 0;
 const userLimit = 250;
-let today = new Date();
+const today = new Date();
 
 function addActivity(activity, duration) {
-  let date = today.toLocaleDateString("en-US");
+  const date = today.toLocaleDateString("en-US");
   let obj = { date, activity, duration };
   activities.push(obj);
 }
