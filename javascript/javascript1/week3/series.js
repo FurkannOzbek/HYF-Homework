@@ -23,10 +23,10 @@ const seriesDurations = [
 const avgLife = 80 * 12 * 30 * 24 * 60; // 80 years of human life in minutes
 
 // Logic
-for (i = 0; i < seriesDurations.length; i++) {
-  let serie = seriesDurations[i];
-  let title = serie.title;
-  let time = serie.days * 24 * 60 + serie.hours * 60 + serie.minutes;
-  let per = ((100 * time) / avgLife).toFixed(3);
+for (let i = 0; i < seriesDurations.length; i++) {
+  const serie = seriesDurations[i];
+  const title = serie.title;
+  const time = serie.days * 24 * 60 + serie.hours * 60 + serie.minutes;
+  const per = ((100 * time) / avgLife).toFixed(3);
   console.log(`${title} took ${per}% of my life`); //Render
 }
