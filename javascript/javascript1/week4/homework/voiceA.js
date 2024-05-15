@@ -13,11 +13,12 @@ let result;
 function getReply(command) {
   const lowerCaseInput = command.toLowerCase();
 
-  //   const match = lowerCaseInput.match(suffixFirst
-  const startIndexFirst = lowerCaseInput.indexOf(suffixFirst); //   console.log(match);
+  const startIndexFirst = lowerCaseInput.indexOf(suffixFirst);
   const startIndexThird = lowerCaseInput.indexOf(suffixThird);
   const startIndexFourth = lowerCaseInput.indexOf(suffixFourth);
   const startIndexSeventh = lowerCaseInput.indexOf(suffixSeventh);
+
+  // 1- Logic for finding the name in command
   if (lowerCaseInput.includes(suffixFirst)) {
     if (startIndexFirst !== -1) {
       const name = command
@@ -32,6 +33,7 @@ function getReply(command) {
       }
     }
   }
+  // 2- What is my name command
   if (lowerCaseInput == suffixSecond) {
     if (nameSave === "") {
       console.log("You havent put any name");
@@ -39,6 +41,7 @@ function getReply(command) {
       console.log(`Your name is ${nameSave}`);
     }
   }
+  // 3- Finding element in command and adding to do list
   if (lowerCaseInput.includes(suffixThird)) {
     let listItem = command.slice(
       startIndexThird + suffixThird.length + 1,
@@ -48,6 +51,7 @@ function getReply(command) {
     todos.push(listItem);
     console.log(`${listItem}added to the to-do`);
   }
+  // 4- Remove the element which is in command from array
   if (lowerCaseInput.includes(suffixFourth)) {
     let removeItem = command.slice(
       startIndexFourth + suffixFourth.length + 1,
@@ -58,9 +62,11 @@ function getReply(command) {
     todos.splice(removeIndex, 1);
     console.log(`${removeItem}removed from the todo`);
   }
+  // 5- what is in to do list
   if (lowerCaseInput.includes(suffixFifth)) {
     console.log(todos);
   }
+  // 6-What day is it today?
   if (lowerCaseInput.includes(suffixSixth)) {
     let date = new Date();
     let options = {
@@ -70,6 +76,7 @@ function getReply(command) {
     };
     console.log(date.toLocaleDateString("en-GB", options));
   }
+  // 7- Simple math logic
   if (lowerCaseInput.includes(suffixSeventh)) {
     let remainingText = command.slice(
       startIndexSeventh + suffixSeventh.length + 1,
