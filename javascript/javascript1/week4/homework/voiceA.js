@@ -1,26 +1,28 @@
-const suffixFirst = "hello my name is ";
-const suffixSecond = "what is my name";
-const suffixThird = "add";
-const prefixThird = "to my todo";
-const suffixFourth = "remove";
-const prefixFourth = "from my todo";
-const suffixFifth = "what is on my to-do";
-const suffixSixth = "what day is it today";
-const suffixSeventh = "what is";
+const patternNameCheck = "hello my name is ";
+const patternNameRecog = "what is my name";
+const patternToDoAdd = "add";
+const patternToDo = "to my todo";
+const patternToDoRem = "remove";
+const patternFromToDo = "from my todo";
+const patternMyToDo = "my to-do list";
+const patternDayCheck = "what day is it today";
+const patternMathCal = "what is";
+
+let result;
 let nameSave = "";
 let todos = [];
 function getReply(command) {
   const lowerCaseInput = command.toLowerCase();
 
-  //   const match = lowerCaseInput.match(suffixFirst
-  const startIndexFirst = lowerCaseInput.indexOf(suffixFirst); //   console.log(match);
-  const startIndexThird = lowerCaseInput.indexOf(suffixThird);
-  const startIndexFourth = lowerCaseInput.indexOf(suffixFourth);
-  const startIndexSeventh = lowerCaseInput.indexOf(suffixSeventh);
-  if (lowerCaseInput.includes(suffixFirst)) {
+  //   const match = lowerCaseInput.match(patternNameCheck
+  const startIndexFirst = lowerCaseInput.indexOf(patternNameCheck); //   console.log(match);
+  const startIndexThird = lowerCaseInput.indexOf(patternToDoAdd);
+  const startIndexFourth = lowerCaseInput.indexOf(patternToDoRem);
+  const startIndexSeventh = lowerCaseInput.indexOf(patternMathCal);
+  if (lowerCaseInput.includes(patternNameCheck)) {
     if (startIndexFirst !== -1) {
       const name = command
-        .slice(startIndexFirst + suffixFirst.length, command.length)
+        .slice(startIndexFirst + patternNameCheck.length, command.length)
         .trim();
 
       if (nameSave.toLowerCase() === name.toLowerCase()) {
@@ -31,33 +33,33 @@ function getReply(command) {
       }
     }
   }
-  if (lowerCaseInput.includes(suffixSecond)) {
+  if (lowerCaseInput.includes(patternNameRecog)) {
     if (nameSave === "") {
       return "You havent put any name";
     } else {
       return `Your name is ${nameSave}`;
     }
   }
-  if (lowerCaseInput.includes(suffixThird)) {
+  if (lowerCaseInput.includes(patternToDoAdd)) {
     let listItem = command.slice(
-      startIndexThird + suffixThird.length + 1,
-      command.length - prefixThird.length - 1
+      startIndexThird + patternToDoAdd.length + 1,
+      command.length - patternToDo.length - 1
     );
     listItem = listItem.charAt(0).toUpperCase() + listItem.slice(1);
     todos.push(listItem);
     return `${listItem}added to the to-do`;
   }
-  if (lowerCaseInput.includes(suffixFourth)) {
+  if (lowerCaseInput.includes(patternToDoRem)) {
     let removeItem = command.slice(
-      startIndexFourth + suffixFourth.length + 1,
-      command.length - prefixFourth.length - 1
+      startIndexFourth + patternToDoRem.length + 1,
+      command.length - patternFromToDo.length - 1
     );
     removeItem = removeItem.charAt(0).toUpperCase() + removeItem.slice(1);
     let removeIndex = todos.indexOf(removeItem);
     todos.splice(removeIndex, 1);
     return `${removeItem}removed from the todo`;
   }
-  if (lowerCaseInput.includes(suffixFifth)) {
+  if (lowerCaseInput.includes(patternMyToDo)) {
     console.log(todos);
     let toDoList = document.getElementById("to-do");
     for (var i = 0; i < todos.length; i++) {
@@ -66,7 +68,7 @@ function getReply(command) {
     let strTodos = JSON.stringify(todos);
     return strTodos;
   }
-  if (lowerCaseInput.includes(suffixSixth)) {
+  if (lowerCaseInput.includes(patternDayCheck)) {
     let date = new Date();
     let options = {
       year: "numeric",
@@ -75,9 +77,9 @@ function getReply(command) {
     };
     return date.toLocaleDateString("en-GB", options);
   }
-  if (lowerCaseInput.includes(suffixSeventh)) {
+  if (lowerCaseInput.includes(patternMathCal)) {
     let remainingText = command.slice(
-      startIndexSeventh + suffixSeventh.length + 1,
+      startIndexSeventh + patternMathCal.length + 1,
       command.length
     );
     remainingText = remainingText.split(" ");
@@ -117,3 +119,5 @@ function getReply(command) {
 // getReply("remove ashellowd from my todo ");
 // getReply("What is on my todo");
 // getReply("What day is it today");
+
+ console.log(getReply("What is 3 + 5"));
