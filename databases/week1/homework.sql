@@ -1,1 +1,5 @@
+SELECT * FROM task
+
 SELECT COUNT(*) FROM task
+
+SELECT COUNT(*)  FROM task WHERE due_date is NULL
