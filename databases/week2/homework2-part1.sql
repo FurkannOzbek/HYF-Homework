@@ -26,3 +26,13 @@ UPDATE task
 SET status_id = 3
 WHERE id = 1
 
+--Mark a task as complete
+UPDATE task
+set status_id = 3
+where id = 10
+
+--Delete a task
+DELETE FROM task WHERE id= 10
+
+select * from task
+
