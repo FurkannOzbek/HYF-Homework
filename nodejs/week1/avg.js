@@ -1,3 +1,4 @@
+// We are getting also directories in process.argv, so I avoid the directories by slice
 const args = process.argv.slice(2);
 let total = 0;
 let avarage = 0;
