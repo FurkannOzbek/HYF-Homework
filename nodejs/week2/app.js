@@ -43,6 +43,18 @@ app.get("/documents/:id", (req,res)=> {
   }
 })
 
+// POST search 
+app.post("/search",(req,res)=> {
+
+  const filteredDataPost = jsonData.filter(item => {
+    // Check if the item matches all field filters
+    return Object.entries(req.body.fields).every(([key, filterValue]) => 
+        item[key] && typeof item[key] === 'string' && item[key].includes(filterValue)
+    );
+});
+res.send(filteredDataPost)
+})
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
