@@ -28,6 +28,21 @@ app.get("/search", (req, res) => {
   }
 });
 
+// GET /documents/:id
+
+app.get("/documents/:id", (req,res)=> {
+  const docId = parseInt(req.params.id , 10);
+  console.log(docId);
+  const selectedDoc = jsonData.find(doc => doc.id === docId);
+  console.log(selectedDoc);
+  if(selectedDoc){
+    res.json(selectedDoc)
+  }
+  else {
+    res.status(404).send('Document couldnt be found')
+  }
+})
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
