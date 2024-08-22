@@ -28,8 +28,6 @@ contactsAPIRouter.get("/", async (req, res) => {
   const orderBy = req.query.sort.toString();
   const bannedWords = ["DROP", "DELETE", "ALTER", "CASE", "CREATE", "UPDATE"];
   if ("sort" in req.query) {
-    const orderBy = req.query.sort.toString();
-
     if (bannedWords.some((word) => orderBy.toUpperCase().includes(word))) {
       return res.status(400).send("You cannot use those commands!");
     } else if (orderBy.length > 0) {
