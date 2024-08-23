@@ -32,9 +32,7 @@ app.get("/search", (req, res) => {
 
 app.get("/documents/:id", (req,res)=> {
   const docId = parseInt(req.params.id , 10);
-  console.log(docId);
   const selectedDoc = jsonData.find(doc => doc.id === docId);
-  console.log(selectedDoc);
   if(selectedDoc){
     res.json(selectedDoc)
   }
