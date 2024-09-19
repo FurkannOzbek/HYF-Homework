@@ -1,7 +1,4 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default async function Home() {
+export default async function Apod() {
   const response = await fetch(
     "https://api.nasa.gov/planetary/apod?api_key=bjGJ41igTdD6HiSXcGVAaTGQ4TpvKhkl54NcWjpU"
   );
@@ -10,5 +7,10 @@ export default async function Home() {
   }
   const data = await response.json();
 
-  return <div>asd</div>;
+  return (
+    <div>
+      <img src={data.url}></img>
+      <p>{data.explanation}</p>
+    </div>
+  );
 }
