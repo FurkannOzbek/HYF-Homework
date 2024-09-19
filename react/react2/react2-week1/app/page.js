@@ -1,14 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import { MarsRover } from "./components/MarsRover";
 
-export default async function Home() {
-  const response = await fetch(
-    "https://api.nasa.gov/planetary/apod?api_key=bjGJ41igTdD6HiSXcGVAaTGQ4TpvKhkl54NcWjpU"
+export default function Home() {
+  return (
+    <div>
+      <MarsRover />
+    </div>
   );
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  const data = await response.json();
-
-  return <div>asd</div>;
 }
