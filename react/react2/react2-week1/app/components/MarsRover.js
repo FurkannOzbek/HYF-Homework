@@ -31,8 +31,8 @@ export const MarsRover = () => {
     <>
       <div>
         {response.map((photo) => (
-          <div>
-            <img key={photo.id} src={photo.img_src} alt="Mars Rover" />
+          <div key={photo.id}>
+            <img src={photo.img_src} alt="Mars Rover" />
             <p> {photo.camera.full_name}</p>
           </div>
         ))}
