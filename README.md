@@ -1,25 +1,9 @@
-# Homework
+## Homework repo for HackYourFuture Bootcamp
 
-## Get git ready to work on homework
-
-Using the `hyf-homework` repo. In the terminal run `git status`
-
-If there are changes that have not been committed, figure out what to do with those changes
-
-- Should they be committed to another branch?
-- Should they be committed to `main`?
-- Should they be discarded?
-
-When you have figured out what to do with the changes and fixed those. Write `git status` again. If it says `nothing to commit, working tree clean`. Then you are ready to create the branch for this weeks homework.
-
-### Creating the branch
-
-Using the `hyf-homework` repo write this command
-
-`git checkout main` - You are now on the `main` branch
-
-`git checkout -b nodejs-week1`
-
-This will create and checkout the branch so you are ready make commits to it
-
-[This video](https://www.youtube.com/watch?v=XYlgh9hSWtw) can help. On slack use the #git-support channel to ask questions about git
+Includes homeworks about : ![Git Badge](https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white)
+![MySQL Badge](https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white)
+![HTML Badge](https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white)
+![CSS Badge](https://img.shields.io/badge/CSS-563d7c?&style=for-the-badge&logo=css3&logoColor=white)
+![NodeJS Badge](https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![React Badge](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+![Javascript Badge](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)
